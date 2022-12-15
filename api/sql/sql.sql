@@ -1,0 +1,14 @@
+create database if not exists devbook2;
+
+use devbook2;
+
+drop table if exists usuarios;
+
+create table usuarios (
+    id int auto_increment primary key,
+    nome varchar(50) not null,
+    nick varchar(50) not null unique,
+    email varchar(50) not null unique,
+    senha varchar(50) not null unique,
+    criadoEm timestamp default current_timestamp()
+) ENGINE=INNODB;
